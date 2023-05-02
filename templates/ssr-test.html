@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Air Polution Levels</h1>
+    <ul>
+        {% for row in rows %}
+        <!-- memulai loops menggunakan jinja -->
+            {% set name = row.MSRSTE_NM %}
+            {% set dust = row.IDEX_MVL %}
+
+            {% if dust >= 70 %}
+            <!-- memakai fungsi if menggunakan jinja -->
+            <li>{{ name }}: {{ dust }}</li>
+            {% endif %}
+
+        {% endfor %}
+        <!-- mengakhiri loops menggunakan jinja -->
+
+    <!-- jinja jinja metode 1-->
+
+        <!-- <li>{{ rows[0].MSRSTE_NM}}: {{ rows[0].IDEX_MVL}}</li> -->
+    <!-- jinja jinja metode 2-->
+    </ul>
+</body>
+</html>

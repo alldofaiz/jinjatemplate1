@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+    <!-- import JQuery CDN  -->
+    <script>
+        function to_detail(){
+            window.location.href = '/detail'
+        }
+    </script>
+</head>
+<body>
+    
+    <h1>Hello there{{ name }}!!!</h1>
+    <!-- jinja harus memakai kurung kurawal double -->
+    <a href="/detail">Let's go to detail page</a>
+    <!-- untuk menuju ke halaman detail page -->
+    <button onclick="to_detail()">Let's jump to the detail</button>
+
+
+</body>
+</html>

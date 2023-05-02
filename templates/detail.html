@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+    <!-- import JQuery CDN  -->
+    <script>
+        function to_index(){
+            window.location.href = '/';
+        }
+    </script>
+</head>
+<body>
+
+    {% if keyword %}
+        <h1>{{ keyword }}</h1>
+    {% endif %}
+
+    <a href="/">Let's go to the main page</a>
+    <!-- untuk menuju ke halaman utama -->
+    <button onclick="to_index()">Let's jump to the main</button>
+</body>
+</html>

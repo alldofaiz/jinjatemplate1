@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+    <!-- import JQuery CDN  -->
+    <script>
+        $(document).ready(function(){
+            get_list();
+        });
+
+        function get_list() {
+            let url = 'https://my-json-server.typicode.com/jjjosephhh/test-db-001/RealtimeCityAir'
+            $.ajax({
+                type: 'GET',
+                url: url,
+                data: {},
+                success: function(response){
+                    let rows = response['row'];
+                    let temp_html = '';
+                    for (let i = 0; i < rows.length; i++){
+                        let row = rows[i];
+                        let name = row['MSRSTE_NM'];
+                        let dust = row['IDEX_MVL'];
+                        console.log(name, dust); 
+                        if (dust >= 70){
+                            temp_html += `<li>${name}: ${dust}</li>`;
+                        }     
+                        // mengambil kota dengan dust lebih dari 70
+                    }
+                    $('#my-list').append(temp_html);
+                    // untuk memunculkan id = my-list
+                }
+            });
+            // fungsi ajax untuk mengambil sebuah data
+        }
+    </script>
+</head>
+<body>
+    <h1>Air Polution Levels</h1>
+
+    <ul id="my-list"></ul>
+</body>
+</html>
